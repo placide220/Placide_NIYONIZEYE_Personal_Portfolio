@@ -1,0 +1,907 @@
+/* I imported Poppins font for modern typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* I set CSS variables for consistent theming */
+:root {
+  --body-color: #f8f9fb;
+  --color-white: #fff;
+  --text-color-main: #222;
+  --text-color-second: #444;
+  --text-color-third: #1e9fab;
+  --first-color: #6e57e0;
+  --first-color-hover: #285bd4;
+  --second-color: #00c9ff;
+  --third-color: #c0a631;
+  --first-shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+/* I defined dark mode color scheme */
+body.dark-mode {
+  --body-color: #181a1b;
+  --color-white: #232526;
+  --text-color-main: #f1f1f1;
+  --text-color-second: #d1d1d1;
+  --text-color-third: #4ca1af;
+  --first-color: #4ca1af;
+  --first-color-hover: #285bd4;
+  --second-color: #232b33;
+  --third-color: #c0a631;
+  --first-shadow-color: rgba(0,0,0,0.35);
+}
+
+/* I reset default styles for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+/* I set base HTML styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* I styled the body element */
+body {
+  background: var(--body-color);
+  color: var(--text-color-main);
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* I customized scrollbar appearance */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 25px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* I styled the header layout */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+
+/* I styled the brand name */
+.header-brand {
+  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+  margin-right: 1.2em;
+  white-space: nowrap;
+  padding-left: 0;
+}
+
+/* I styled the navigation bar */
+.header-nav, .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(90deg, #2c3e50 60%, #4ca1af 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+  max-width: 1204px;
+  width: calc(98vw + 4px);
+  margin: 32px auto 0 auto;
+  padding: 0 32px;
+  min-height: 80px;
+  position: relative;
+  box-sizing: border-box;
+  gap: 0.5em;
+  position: sticky;
+  top: 24px;
+  z-index: 2100;
+}
+
+/* I styled the navigation menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.1em;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+/* I styled navigation links */
+.nav-menu li a {
+  font-family: 'Montserrat', 'Poppins', Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+  padding: 10px 14px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+/* I styled navigation links on hover */
+.nav-menu li a:hover, .nav-menu li a.active {
+  color: #fff;
+  background: var(--first-color);
+}
+
+/* I styled download and dark mode buttons */
+.download-btn, #download-pdf, #dark-mode-toggle {
+  margin-left: 1em;
+  padding: 10px 24px;
+  background: linear-gradient(90deg, #4ca1af 60%, #2c3e50 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #2c3e5040;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* I styled buttons on hover */
+.download-btn:hover, #download-pdf:hover, #dark-mode-toggle:hover {
+  background: linear-gradient(90deg, #2c3e50 60%, #4ca1af 100%);
+  transform: scale(1.04);
+}
+
+/* I styled mobile menu toggle */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  cursor: pointer;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1102;
+}
+
+/* I styled main content area */
+main {
+  max-width: 900px;
+  width: 96vw;
+  margin: 90px auto 0 auto;
+  padding: 48px 24px 32px 24px;
+  background: var(--color-white);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px var(--first-shadow-color);
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* I styled section elements */
+section {
+  margin-bottom: 40px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #4ca1af22;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* I styled section headings */
+.about h2, section h2, .contact h2 {
+  color: var(--first-color);
+  font-size: 1.5em;
+  margin-bottom: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* I styled about section layout */
+.about-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5em;
+}
+
+.about-flex .about-text {
+  width: 100%;
+}
+
+/* I styled profile picture */
+.about-flex .profile-picture {
+  margin: 0 0 24px 0;
+  width: 140px;
+  height: 140px;
+  max-width: 60vw;
+  max-height: 60vw;
+  display: block;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4ca1af;
+  box-shadow: 0 0 32px #4ca1af44, 0 2px 8px #0006;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* I styled about card */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-white);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px var(--first-shadow-color);
+  padding: 2em 1.5em;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+/* I styled profile picture in about card */
+.about-card .profile-picture {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4ca1af;
+  box-shadow: 0 0 32px #4ca1af44, 0 2px 8px #0006;
+  margin-bottom: 1.2em;
+}
+
+/* I styled about text */
+.about-card .about-text {
+  width: 100%;
+  max-width: 420px;
+  text-align: left;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* I styled heading in about text */
+.about-card .about-text h2 {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  text-align: left;
+  width: 100%;
+}
+
+/* I styled paragraph in about text */
+.about-card .about-text p {
+  margin: 0;
+  line-height: 1.7;
+  text-align: left;
+  width: 100%;
+}
+
+/* I adjusted layout for larger screens */
+@media (min-width: 700px) {
+  .about-card {
+    flex-direction: row;
+    align-items: center;
+    padding: 2em 3em;
+  }
+  .about-card .profile-picture {
+    margin-bottom: 0;
+    margin-right: 2em;
+    width: 160px;
+    height: 160px;
+  }
+  .about-card .about-text {
+    max-width: none;
+    align-items: flex-start;
+  }
+}
+
+/* I adjusted layout for smaller screens */
+@media (max-width: 700px) {
+  .about-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.2em;
+    gap: 1.2em;
+  }
+  .about-card .profile-picture {
+    width: 110px;
+    height: 110px;
+  }
+  .about-card .about-text {
+    text-align: center;
+    align-items: center;
+  }
+}
+
+/* I adjusted layout for medium screens */
+@media (max-width: 1024px) {
+  main {
+    padding: 24px 4vw;
+  }
+  .project-card {
+    width: 90vw;
+    max-width: 320px;
+  }
+}
+
+/* I adjusted layout for tablet screens */
+@media (max-width: 900px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 70px;
+    min-height: 70px;
+    padding: 0 12px;
+  }
+  main {
+    margin-top: 70px;
+    padding: 24px 4vw 24px 4vw;
+  }
+  .header-brand {
+    margin-bottom: 0.5em;
+    font-size: 1.3em;
+  }
+  .header-nav, .navbar {
+    max-width: 984px;
+    width: calc(98vw + 4px);
+    border-radius: 12px !important;
+    margin: 32px auto 0 auto;
+    padding: 0 6px;
+    min-height: 80px;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: flex-start;
+    top: 0;
+  }
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 0.7em;
+  }
+}
+
+/* I adjusted layout for mobile screens */
+@media (max-width: 800px) {
+  .header-nav, .navbar {
+    margin: 0 auto;
+    min-height: 80px;
+    padding: 0 6px;
+    border-radius: 12px !important;
+    margin: 16px auto 0 auto;
+    width: calc(98vw + 4px);
+    max-width: calc(98vw + 4px);
+    background: linear-gradient(120deg, #4ca1af 60%, #fff 100%);
+    box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+    flex-direction: row;
+    justify-content: flex-start;
+    top: 0;
+  }
+  .nav-menu {
+    flex-direction: column;
+    background: linear-gradient(120deg, #4ca1af 60%, #fff 100%);
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    width: 200px;
+    max-width: 320px;
+    gap: 0.5em;
+    box-shadow: 0 8px 32px #0003;
+    padding: 1em 0.5em;
+    z-index: 101;
+    transition: opacity 0.2s;
+    display: none;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    color: #232b33;
+    font-size: 2.2em;
+    cursor: pointer;
+    z-index: 1102;
+    position: absolute;
+    top: 18px;
+    right: 28px;
+    margin: 0;
+  }
+  .header-brand {
+    font-size: 1.3em;
+    margin-right: 0.7em;
+    padding-left: 0;
+  }
+}
+
+/* I adjusted layout for small mobile screens */
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  main {
+    margin-top: 56px;
+    padding: 8px 1vw;
+    width: 99vw;
+    min-width: 0;
+  }
+  .about-flex .profile-picture {
+    width: 90px;
+    height: 90px;
+    max-width: 80vw;
+    max-height: 80vw;
+  }
+  .about-flex {
+    gap: 1em;
+  }
+  .header-brand {
+    font-size: 1em;
+  }
+  section h2, .about h2, .contact h2 {
+    font-size: 1em;
+  }
+  ul {
+    padding-left: 1em;
+  }
+}
+
+/* I styled skills grid layout */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2em;
+  margin-top: 2em;
+}
+
+/* I styled skill cards */
+.skill-card {
+  background: linear-gradient(120deg, var(--first-color) 0%, var(--second-color) 100%);
+  color: #fff;
+  padding: 1em 1.2em;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 1.05em;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(0,201,255,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* I styled skill cards on hover */
+.skill-card:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(0,201,255,0.13);
+}
+
+/* I styled experience timeline */
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 2em;
+}
+
+/* I styled experience items */
+.experience-item {
+  background: #f7f9fb;
+  border-left: 4px solid var(--first-color);
+  padding: 1.2em 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(110,87,224,0.07);
+  transition: box-shadow 0.3s;
+}
+
+/* I styled experience items on hover */
+.experience-item:hover {
+  box-shadow: 0 6px 18px rgba(110,87,224,0.13);
+}
+
+/* I styled experience header */
+.exp-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+  margin-bottom: 0.7em;
+}
+
+/* I styled experience role */
+.exp-role {
+  font-weight: 600;
+  color: var(--first-color);
+  font-size: 1.1em;
+}
+
+/* I styled experience company */
+.exp-company {
+  color: var(--text-color-third);
+  font-size: 1em;
+}
+
+/* I styled experience date */
+.exp-date {
+  margin-left: auto;
+  color: #888;
+  font-size: 0.98em;
+}
+
+/* I styled experience details */
+.exp-details {
+  margin-left: 1em;
+  color: var(--text-color-second);
+  font-size: 1em;
+  list-style: disc;
+}
+
+/* I styled projects container */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* I styled project cards */
+.project-card {
+  position: relative;
+  width: 240px;
+  height: 170px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+  background: var(--color-white);
+  transition: box-shadow 0.3s, transform 0.3s;
+  cursor: pointer;
+  margin-bottom: 10px;
+  max-width: 98vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* I styled project card content */
+.project-card-content {
+  position: relative;
+  z-index: 1;
+  color: #333;
+  text-align: center;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* I styled project card images */
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+/* I styled project card overlay */
+.project-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 201, 255, 0.85);
+  color: #fff;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  text-align: center;
+  transition: opacity 0.3s;
+  z-index: 2;
+}
+
+/* I styled project cards on hover */
+.project-card:hover {
+  box-shadow: 0 6px 18px rgba(110,87,224,0.13);
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* I styled project card images on hover */
+.project-card:hover img {
+  transform: scale(1.08);
+  filter: blur(2px) brightness(0.7);
+}
+
+/* I styled project card overlay on hover */
+.project-card:hover .project-card-overlay {
+  opacity: 1;
+}
+
+/* I styled contact section */
+.contact {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* I styled contact links */
+.contact a {
+  color: #4ca1af;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+/* I styled contact links on hover */
+.contact a:hover {
+  color: #fff;
+}
+
+/* I styled contact form */
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 400px;
+  margin: 0 auto 1em auto;
+  width: 100%;
+}
+
+/* I styled form inputs and textarea */
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8em;
+  border-radius: 8px;
+  border: 1px solid #4ca1af55;
+  font-size: 1em;
+  font-family: inherit;
+  background: #232526;
+  color: #fff;
+  resize: vertical;
+}
+
+/* I styled form button */
+#contactForm button {
+  background: linear-gradient(90deg, #4ca1af 60%, #2c3e50 100%);
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.7em 2em;
+  box-shadow: 0 2px 12px #2c3e5040;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* I styled form button on hover */
+#contactForm button:hover {
+  background: linear-gradient(90deg, #2c3e50 60%, #4ca1af 100%);
+  transform: scale(1.04);
+}
+
+/* I styled form message */
+.form-message {
+  color: #ffb86c;
+  font-size: 1em;
+  min-height: 1.5em;
+  display: block;
+  text-align: center;
+}
+
+/* I styled footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 30px;
+  background: #F8F8F8;
+  padding-block: 40px 60px;
+  font-size: 1em;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  margin-top: 48px;
+  box-shadow: 0 -2px 12px #0002;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* I styled dark mode toggle in footer */
+footer #dark-mode-toggle {
+  margin-top: 1em;
+  background: #fff;
+  color: #232b33;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5em;
+  border: none;
+  box-shadow: 0 2px 8px #0002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+footer #dark-mode-toggle:hover {
+  background: #4ca1af;
+  color: #fff;
+}
+
+/* I created fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.2s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+/* I defined fade-in animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* I styled scroll to top button */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2em;
+  box-shadow: 0 2px 12px #0003;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+/* I styled scroll to top button when visible */
+#scrollTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* I styled education list */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+/* I styled education items */
+.education-item {
+  background: #f7f9fb;
+  border-left: 4px solid var(--first-color);
+  padding: 1em 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(110,87,224,0.07);
+}
+
+/* I styled education degree */
+.edu-degree {
+  font-weight: 600;
+  color: var(--first-color);
+  font-size: 1.1em;
+}
+
+/* I styled education school */
+.edu-school {
+  color: var(--text-color-third);
+  font-size: 1em;
+  margin-bottom: 0.3em;
+}
+
+/* I styled education date */
+.edu-date {
+  color: #888;
+  font-size: 0.98em;
+}
+
+/* I made media responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* I styled skills list */
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin-top: 2em;
+}
+
+/* I styled skill bars */
+.skill-bar {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+/* I styled skill titles */
+.skill-title {
+  flex: 0 0 110px;
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+/* I styled skill bar backgrounds */
+.bar-bg {
+  flex: 1;
+  background: #e6e6e6;
+  border-radius: 8px;
+  height: 14px;
+  overflow: hidden;
+  margin-right: 0.5em;
+  position: relative;
+}
+
+/* I styled skill bar fills */
+.bar-fill {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  height: 100%;
+  border-radius: 8px;
+  transition: width 1s cubic-bezier(.25,.8,.25,1);
+}
+
+/* I styled skill percentages */
+.skill-percent {
+  flex: 0 0 40px;
+  font-weight: 600;
+  color: var(--text-color-main);
+  text-align: right;
+}
+
+/* I adjusted mobile navigation menu */
+@media (max-width: 800px) {
+  .nav-menu {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5em;
+    width: 200px;
+    max-width: 320px;
+  }
+  .nav-menu li {
+    width: 100%;
+  }
+  .nav-menu li a {
+    width: 100%;
+    text-align: left;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}

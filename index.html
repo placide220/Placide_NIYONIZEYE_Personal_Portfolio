@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- I set the character set to UTF-8 and ensured the viewport is set for responsive design -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- I added the title of the page -->
+  <title>NIYONIZEYE PLACIDE - Front-End Engineer</title>
+  <!-- I linked the external CSS file -->
+  <link rel="stylesheet" href="css1.css">
+  <!-- I imported the Montserrat font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- I added a link to the Unicons library for the dark mode icon -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+<body>
+  <!-- I created the header section with a brand name and navigation menu -->
+  <header>
+  <nav class="header-nav navbar">
+    <div class="header-brand">NIYONIZEYE PLACIDE</div>
+    <button class="nav-toggle" aria-label="Open navigation">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+  <!-- I started the main content section with a fade-in effect -->
+  <main class="fade-in">
+    <!-- I created an introductory section with spinning words effect -->
+    <section id="intro" class="intro" style="text-align:center; margin-bottom: 2em;">
+      <h1>
+        I'm&nbsp;
+        <span id="spinning-words" style="color:var(--first-color); font-weight:bold;"></span>
+      </h1>
+    </section>
+    <!-- I added an "About Me" section with a profile picture and description -->
+    <section id="about" class="about">
+      <div class="about-card">
+        <img src="plac1.jpg" alt="NIYONIZEYE PLACIDE" class="profile-picture interactive">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            I am a passionate Front-End Engineer with a strong background in building responsive, accessible, and visually engaging web applications. I specialize in modern JavaScript frameworks, CSS architecture, and creating seamless user experiences. I love solving problems, collaborating with teams, and continuously learning new technologies to deliver high-quality digital products.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- I created an "Education" section listing educational background -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education-list">
+        <div class="education-item">
+          <div class="edu-degree">Bachelor of Software Engineering</div>
+          <div class="edu-school">African Leadership University</div>
+          <div class="edu-date">May 2028</div>
+        </div>
+        <div class="education-item">
+          <div class="edu-degree">High School Diploma</div>
+          <div class="edu-school">Mathematics-Physics-Computer</div>
+          <div class="edu-date">2019</div>
+        </div>
+      </div>
+    </section>
+    <!-- I added an "Experience" section detailing work experience -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience-timeline">
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-role">Front-End Engineer</span>
+            <span class="exp-company">@ ModernWeb Solutions</span>
+            <span class="exp-date">Jan 2023 - Present</span>
+          </div>
+          <ul class="exp-details">
+            <li>Developed and maintained scalable React applications for e-commerce and SaaS clients.</li>
+            <li>Led UI refactoring for accessibility and performance, improving Lighthouse scores by 30%.</li>
+            <li>Collaborated with designers and backend teams to deliver seamless user experiences.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-role">Web Developer</span>
+            <span class="exp-company">@ Freelance</span>
+            <span class="exp-date">2021 - 2022</span>
+          </div>
+          <ul class="exp-details">
+            <li>Built custom websites and dashboards for small businesses using HTML, CSS, JavaScript, and Vue.js.</li>
+            <li>Implemented responsive layouts and interactive features for improved engagement.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <div class="exp-header">
+            <span class="exp-role">Open Source Contributor</span>
+            <span class="exp-date">Ongoing</span>
+          </div>
+          <ul class="exp-details">
+            <li>Contributed to React and Vue.js ecosystem projects, focusing on documentation and bug fixes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- I created a "Skills" section with skill bars -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <div class="skill-bar">
+          <span class="skill-title">HTML5</span>
+          <div class="bar-bg"><div class="bar-fill" style="width: 95%"></div></div>
+          <span class="skill-percent">95%</span>
+        </div>
+        <div class="skill-bar">
+          <span class="skill-title">CSS3/Sass</span>
+          <div class="bar-bg"><div class="bar-fill" style="width: 92%"></div></div>
+          <span class="skill-percent">92%</span>
+        </div>
+        <div class="skill-bar">
+          <span class="skill-title">JavaScript</span>
+          <div class="bar-bg"><div class="bar-fill" style="width: 90%"></div></div>
+          <span class="skill-percent">90%</span>
+        </div>
+        <div class="skill-bar">
+          <span class="skill-title">React</span>
+          <div class="bar-bg"><div class="bar-fill" style="width: 88%"></div></div>
+          <span class="skill-percent">88%</span>
+        </div>
+        <div class="skill-bar">
+          <span class="skill-title">Vue.js</span>
+          <div class="bar-bg"><div class="bar-fill" style="width: 80%"></div></div>
+          <span class="skill-percent">80%</span>
+        </div>
+        <div class="skill-bar">
+          <span class="skill-title">TypeScript</span>
+          <div class="bar-bg"><div class="bar-fill" style="width: 75%"></div></div>
+          <span class="skill-percent">75%</span>
+        </div>
+      </div>
+    </section>
+    <!-- I added a "Projects" section showcasing various projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-container">
+        <div class="project-card">
+          <div class="project-card-content">
+            <strong>Portfolio Website</strong>
+            <p>Personal portfolio built with React and Sass, featuring a custom design, dark mode, and smooth animations.</p>
+          </div>
+          <div class="project-card-overlay">
+            <strong>Portfolio Website</strong>
+            <p>Personal portfolio built with React and Sass, featuring a custom design, dark mode, and smooth animations.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-content">
+            <strong>Task Manager App</strong>
+            <p>A full-stack task manager built with React, Node.js, and MongoDB, supporting authentication and real-time updates.</p>
+          </div>
+          <div class="project-card-overlay">
+            <strong>Task Manager App</strong>
+            <p>A full-stack task manager built with React, Node.js, and MongoDB, supporting authentication and real-time updates.</p>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-card-content">
+            <strong>Open Source UI Library</strong>
+            <p>Contributed components and documentation to a community-driven React UI kit.</p>
+          </div>
+          <div class="project-card-overlay">
+            <strong>Open Source UI Library</strong>
+            <p>Contributed components and documentation to a community-driven React UI kit.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- I created a "Contact Me" section with a contact form -->
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form id="contactForm" novalidate>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+        <span class="form-message"></span>
+      </form>
+      <p>Email: <a href="mailto:mugishaki@gmail.com">mugishaki@gmail.com</a></p>
+      <p>Phone: +250798583984</p>
+    </section>
+  </main>
+  <!-- I added a button to download the page as a PDF -->
+  <div style="text-align:center; margin: 2em 0;">
+    <button id="download-pdf" class="download-btn">Download as PDF</button>
+  </div>
+  <!-- I created a footer section with copyright information -->
+  <footer>
+  &copy; 2025 NIYONIZEYE PLACIDE
+  <button id="dark-mode-toggle" title="Toggle dark mode">
+    <i class="uil uil-moon"></i>
+  </button>
+</footer>
+  <!-- I added a button to scroll to the top of the page -->
+  <button id="scrollTopBtn" title="Scroll to top">&#8679;</button>
+  <!-- I included external JavaScript libraries for HTML to canvas conversion and PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- I linked an external JavaScript file and added a script for the spinning words effect -->
+  <script src="main.js"></script>
+  <script>
+    // Spinning words effect
+    const words = ["a Developer", "a Designer", "a Problem Solver", "a Team Player", "a Fast Learner"];
+    const spinning = document.getElementById('spinning-words');
+    let idx = 0;
+    function spinWords() {
+      spinning.textContent = words[idx];
+      idx = (idx + 1) % words.length;
+    }
+    spinWords();
+    setInterval(spinWords, 1800);
+  </script>
+</body>
+</html>
